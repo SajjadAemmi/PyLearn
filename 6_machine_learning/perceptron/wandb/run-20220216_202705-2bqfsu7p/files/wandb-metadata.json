@@ -1,0 +1,18 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-02-16T16:57:09.443761",
+    "startedAt": "2022-02-16T16:57:05.691333",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "f:\\python\\course\\machine_learning\\perceptron\\perceptron.py",
+    "codePath": "perceptron.py",
+    "host": "sajjad-pc",
+    "username": "Sajjad",
+    "executable": "C:\\Users\\Sajjad\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+}

@@ -1,0 +1,22 @@
+#qmedia-modal {
+    height: calc(100% - 75px);
+}
+
+#qmedia-modal iframe {
+    border: 0;
+    border-radius: 0;
+}
+
+.ui.dimmer.on_top {
+    z-index: 1000!important;
+}
+
+#submit-form {
+    display: inline;
+}
+
+#problem_git_submit_buttons {
+    position: relative;
+    direction: ltr;
+    display: inline;
+}

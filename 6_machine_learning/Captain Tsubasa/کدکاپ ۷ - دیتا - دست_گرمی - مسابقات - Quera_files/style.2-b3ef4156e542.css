@@ -1,0 +1,35 @@
+.sui-error, .ui.basic.red.pointing.label {
+    display: table !important;
+}
+
+.sui-error {
+    line-height: 1.5em !important;
+    text-align: initial;
+}
+
+.sui-error ul {
+    margin: 0;
+    text-align: initial;
+    padding-inline-start: 1.5em;
+}
+
+.sui-error:before {
+    right: 1.2em !important;
+}
+
+.ui.form .sui-no-division:not(:last-child) {
+    margin: 0 0 1em;
+}
+
+.ui.form [class="sui-no-division"] > .field input:not(.hour-input):not(.minute-input):not(.second-input), .ui.form [class="sui-no-division"] > .field .ui.dropdown, .ui.form [class="sui-no-division"] > .field .ui.search {
+    width: 240px;
+}
+
+.ui.form .field>.selection.search.dropdown>i[class='dropdown icon'] {
+    display: none !important;
+}
+
+.ui.selection.dropdown>.dropdown.icon {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+}

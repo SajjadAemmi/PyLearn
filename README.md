@@ -1,2 +1,4 @@
 # PyLearn
-Small Powerful Tricks in Python
+
+Python Zero to Hero for Artificial Intelligence and Machine Learning
+
