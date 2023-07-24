@@ -1,4 +1,3 @@
 # PyLearn
 
-Python Zero to Hero for Artificial Intelligence and Machine Learning
-
+Python Zero to Hero for Artificial Intelligence and Machine Learning 🐍
