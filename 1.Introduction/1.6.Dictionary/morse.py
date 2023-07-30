@@ -85,11 +85,11 @@ def decrypt(message):
 
 
 def main():
-    message = "GEEKS-FOR-GEEKS"
+    message = "PyLearn"
     result = encrypt(message.upper())
     print(result)
 
-    message = "--. . . -.- ... -....- ..-. --- .-. -....- --. . . -.- ... "
+    message = ".--. -.-- .-.. . .- .-. -."
     result = decrypt(message)
     print(result)
 
