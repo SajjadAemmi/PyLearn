@@ -128,3 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .DS_Store
+
+
+7.DeepLearning/7.3.CustomDatasetCNN/17flowers/dataset/17flowers/
+7.DeepLearning/7.3.CustomDatasetCNN/17flowers/prepare_dataset.py
