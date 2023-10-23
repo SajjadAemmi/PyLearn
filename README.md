@@ -13,3 +13,4 @@ Python Zero to Hero for Artificial Intelligence and Machine Learning 🐍
 | 5 | 📈 [Data Science](./5.DataScience/)         | Pandas, Numpy and Matplotlib    |
 | 6 | 🤖 [Machine Learning](./6.MachineLearning/) | Scikit-Learn, Scipy and Keras   |
 | 7 | 🍓 [Deep Learning](7.DeepLearning/)         | TensorFlow and PyTorch          |
+
