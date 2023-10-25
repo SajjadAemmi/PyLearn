@@ -130,5 +130,6 @@ dmypy.json
 .DS_Store
 
 
-7.DeepLearning/7.3.CustomDatasetCNN/17flowers/dataset/17flowers/
+dataset/
+datasets/
 7.DeepLearning/7.3.CustomDatasetCNN/17flowers/prepare_dataset.py
