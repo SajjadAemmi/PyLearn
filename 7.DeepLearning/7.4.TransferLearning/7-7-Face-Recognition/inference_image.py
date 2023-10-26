@@ -13,7 +13,7 @@ parser.add_argument('--detection-threshold', help='detection confidence threshol
 parser.add_argument('--recognition-threshold', help='recognition confidence threshold', default=0.9, type=float)
 args = parser.parse_args()
 
-model = tf.keras.models.load_model('saved_model')
+model = tf.keras.models.load_model('weights/7-7-face-recognition-model.h5')
 names = ['Ali-Khamenei', 'Angelina-Jolie', 'Barak-Obama', 'Behnam-Bani',
          'Donald-Trump', 'Emma-Watson', 'Han-Hye-Jin', 'Kim-Jong-Un',
          'Leyla-Hatami', 'Lionel-Messi', 'Michelle-Obama', 'Morgan-Freeman',
