@@ -294,9 +294,7 @@ class AlignCollate(object):
         self.imgW = imgW
         self.keep_ratio_with_pad = keep_ratio_with_pad
 
-    def __call__(self, batch):
-        batch = filter(lambda x: x is not None, batch)
-        images, labels = zip(*batch)
+    def __call__(self, images):
 
         if self.keep_ratio_with_pad:  # same concept with 'Rosetta' paper
             resized_max_w = self.imgW
@@ -323,7 +321,7 @@ class AlignCollate(object):
             image_tensors = [transform(image) for image in images]
             image_tensors = torch.cat([t.unsqueeze(0) for t in image_tensors], 0)
 
-        return image_tensors, labels
+        return image_tensors
 
 
 def tensor2im(image_tensor, imtype=np.uint8):
