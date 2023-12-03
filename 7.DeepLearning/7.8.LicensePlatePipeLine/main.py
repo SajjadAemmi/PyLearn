@@ -6,11 +6,11 @@ from deep_text_recognition_benchmark.dtrb import DTRB
 plate_detector = YOLO("weights/yolov8-detector/yolov8-s-license-plate-detector.pt")
 plate_recognizer = DTRB("weights/dtrb-recognizer/dtrb-None-VGG-BiLSTM-CTC-license-plate-recognizer.pth")
 
-image = cv2.imread("io/input/IMG_5157.JPG")
+image = cv2.imread("io/input/IMG_5178.JPG")
 results = plate_detector.predict(image)
 for result in results:
     for i in range(len(result.boxes.xyxy)):
-        if result.boxes.conf[i] > 0.8:
+        if result.boxes.conf[i] > 0.7:
             bbox_tensor = result.boxes.xyxy[i]
             bbox_ndarray = bbox_tensor.cpu().detach().numpy().astype(int)
             print(bbox_ndarray)

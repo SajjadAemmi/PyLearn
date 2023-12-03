@@ -116,12 +116,12 @@ class DTRB:
                 _, preds_index = preds.max(2)
                 preds_str = self.converter.decode(preds_index, length_for_pred)
 
-            log = open(f'./log_demo_result.txt', 'a')
+            # log = open(f'./log_demo_result.txt', 'a')
             dashed_line = '-' * 80
             head = f'{"image_path":25s}\t{"predicted_labels":25s}\tconfidence score'
             
             print(f'{dashed_line}\n{head}\n{dashed_line}')
-            log.write(f'{dashed_line}\n{head}\n{dashed_line}\n')
+            # log.write(f'{dashed_line}\n{head}\n{dashed_line}\n')
 
             preds_prob = F.softmax(preds, dim=2)
             preds_max_prob, _ = preds_prob.max(dim=2)
@@ -135,9 +135,9 @@ class DTRB:
                 confidence_score = pred_max_prob.cumprod(dim=0)[-1]
 
                 print(f'{img_name:25s}\t{pred:25s}\t{confidence_score:0.4f}')
-                log.write(f'{img_name:25s}\t{pred:25s}\t{confidence_score:0.4f}\n')
+                # log.write(f'{img_name:25s}\t{pred:25s}\t{confidence_score:0.4f}\n')
 
-            log.close()
+            # log.close()
 
 
 if __name__ == "__main__":
