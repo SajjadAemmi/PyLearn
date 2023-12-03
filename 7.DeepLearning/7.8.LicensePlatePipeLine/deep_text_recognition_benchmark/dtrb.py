@@ -5,6 +5,7 @@ import torch.backends.cudnn as cudnn
 import torch.utils.data
 import torch.nn.functional as F
 import torchvision.transforms as transforms
+import cv2
 
 from deep_text_recognition_benchmark.utils import CTCLabelConverter, AttnLabelConverter
 from deep_text_recognition_benchmark.dataset import RawDataset, AlignCollate
@@ -81,10 +82,8 @@ class DTRB:
             collate_fn=AlignCollate_demo, pin_memory=True)
 
     def predict(self, image):
-        AlignCollate_demo = AlignCollate(imgH=opt.imgH, imgW=opt.imgW, keep_ratio_with_pad=opt.PAD)
         transform = transforms.Compose([
-            transforms.ToTensor(),
-            # transforms.Normalize(0, 1)
+                transforms.ToTensor(),
             ])
             
         # predict
@@ -92,12 +91,7 @@ class DTRB:
         with torch.no_grad():
             image_tensor = transform(image)
             image_tensor = image_tensor.sub_(0.5).div_(0.5)
-            image_tensor = torch.unsqueeze(image_tensor, 0) # output: [1, 1, 32, 100]
-            print(image_tensor.shape)
-            image_tensor = torch.permute(image_tensor, (0, 1, 3, 2))
-            print(image_tensor.shape)
-
-            # image_tensor = AlignCollate_demo(image_tensor)
+            image_tensor = torch.unsqueeze(image_tensor, 0)  # output: [1, 1, 32, 100]
             
             # for image_tensors, image_path_list in self.demo_loader:
             batch_size = image_tensor.size(0)
@@ -121,7 +115,6 @@ class DTRB:
                 # select max probabilty (greedy decoding) then decode index to character
                 _, preds_index = preds.max(2)
                 preds_str = self.converter.decode(preds_index, length_for_pred)
-
 
             log = open(f'./log_demo_result.txt', 'a')
             dashed_line = '-' * 80
@@ -149,4 +142,6 @@ class DTRB:
 
 if __name__ == "__main__":
     plate_recognizer = DTRB("../weights/dtrb-recognizer/dtrb-None-VGG-BiLSTM-CTC-license-plate-recognizer.pth")
-    plate_recognizer.predict("../io/input-plates")
+
+    image = cv2.imread("../io/input/IMG_5157.JPG")
+    plate_recognizer.predict(image)
