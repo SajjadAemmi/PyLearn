@@ -133,6 +133,7 @@ dmypy.json
 dataset/
 datasets/
 7.DeepLearning/7.3.CustomDatasetCNN/17flowers/prepare_dataset.py
+7.DeepLearning/7.9.AudioClassification/raw_audios
 
 *.pt
 *.pth

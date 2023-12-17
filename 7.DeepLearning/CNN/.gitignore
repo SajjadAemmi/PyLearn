@@ -1,9 +1,0 @@
-.DS_Store
-._.DS_Store
-__pycache__
-.idea
-.vs
-.vscode
-.ipynb_checkpoints
-
-/weights
